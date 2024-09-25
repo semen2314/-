@@ -3582,6 +3582,17 @@ input, select, textarea {
 		overflow: hidden;
 		position: relative;
 		text-align: center;
+		padding-top: 0px;
+		background-color: rgba(0, 0, 0, 0.5);
+		.banner-image {
+			width: 50%; /* Ширина изображения на 100% от родительского контейнера */
+			max-width: 225px; /* Максимальная ширина изображения */
+			height: auto; /* Автоматическая высота для сохранения пропорций */
+			margin: 0 auto; /* Центрирование изображения */
+			margin-bottom: 20px;
+			display: block; /* Отображение как блочный элемент */
+			z-index: 1; /* Установка уровня наложения */
+		}
 	}
 
 		#banner h2 {
@@ -3637,8 +3648,10 @@ input, select, textarea {
 				color: inherit;
 			}
 
+
+		
 		#banner .more {
-			-moz-transition: -moz-transform 0.75s ease, opacity 0.75s ease;
+			-moz-transition: -moz-transform 50s ease, opacity 50s ease;
 			-webkit-transition: -webkit-transform 0.75s ease, opacity 0.75s ease;
 			-ms-transition: -ms-transform 0.75s ease, opacity 0.75s ease;
 			transition: transform 0.75s ease, opacity 0.75s ease;
@@ -3965,7 +3978,7 @@ input, select, textarea {
 
 	body.landing #page-wrapper {
 		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
+		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/mainBanner.jpg");
 		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
 		background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
 		background-attachment: fixed;
@@ -3985,13 +3998,7 @@ input, select, textarea {
 
 	body.is-mobile.landing #banner,
 	body.is-mobile.landing .wrapper.style4 {
-		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-position: center center;
-		background-repeat: no-repeat;
-		background-size: cover;
+		
 	}
 
 	body.is-mobile.landing #footer {
