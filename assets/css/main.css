@@ -2566,7 +2566,7 @@ input, select, textarea {
   
   .features .plitButton:hover{
   
-    transform: scale(1.01);
+    transform: scale(1.05);
     
   }
   .features .plitButton:active {
@@ -2579,7 +2579,8 @@ input, select, textarea {
       display: block;
       position: relative;
       text-align: left;
-      width: 50%;
+      width: 100%;
+	  margin: 3px;
     }
 
       .features li:nth-child(1) {
