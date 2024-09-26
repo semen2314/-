@@ -1,15 +1,23 @@
 document.querySelectorAll('.plitButton').forEach(button => {
-    button.addEventListener('mousedown', () => {
-      button.classList.add('pressed'); 
-    });
-  
-    button.addEventListener('mouseup', () => {
-      button.classList.remove('pressed'); 
-    });
-  
-    button.addEventListener('mouseleave', () => {
-      button.classList.remove('pressed'); 
-    });
+  button.addEventListener('click', () => {
+    
+    button.classList.add('pressed');
+
+    const link = button.getAttribute('data-link');
+
+    
+    setTimeout(() => {
+      if (link) {
+        window.location.href = link; 
+      }
+    }, 300); 
+
+    
+    setTimeout(() => {
+      button.classList.remove('pressed');
+    }, 500); 
   });
+});
+
   
   
