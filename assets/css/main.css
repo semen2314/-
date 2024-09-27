@@ -1780,13 +1780,13 @@ input, select, textarea {
 	}
 
 	header.major {
-		margin: 0 0 3.5em 0;
+		margin: 0 0 0em 0;
 	}
 
 		header.major h2, header.major h3, header.major h4, header.major h5, header.major h6 {
 			border-bottom: solid 2px #fff;
 			display: inline-block;
-			padding-bottom: 1em;
+			padding-bottom: 0.5em;
 			position: relative;
 		}
 
@@ -2678,6 +2678,57 @@ input, select, textarea {
 					}
 
 			}
+
+
+/* Departament */
+#department-head {
+    background-image: url('path/to/your/background-image.jpg'); /* Укажите путь к изображению */
+    background-size: cover; /* Масштабируем изображение, чтобы оно заполнило весь блок */
+    background-position: center; /* Центрируем изображение */
+    background-repeat: no-repeat; /* Не повторяем изображение */
+    padding: 20px; /* Добавляем отступы вокруг содержимого */
+    color: white; /* Устанавливаем цвет текста по умолчанию в белый, чтобы он был виден на фоне */
+    min-height: 400px; /* Устанавливаем минимальную высоту секции (можно изменить по желанию) */
+}
+#departament-head .major h2{
+	margin-top:200px;
+}
+
+#department-head .content {
+    display: flex; /* Используем flexbox для расположения элементов в строку */
+    align-items: flex-start; /* Выравнивание по верхней части */
+    margin-top: 10px; /* Отступ сверху для контента */
+    background-color: rgba(0, 0, 0, 0.5); /* Добавляем полупрозрачный фон для контента */
+    padding: 20px; /* Отступы внутри контента */
+    border-radius: 10px; /* Скругление углов блока контента */
+}
+
+.left-side {
+    flex: 1; /* Занимает 1 часть доступного пространства */
+    text-align: center; /* Выравнивание изображения по центру */
+}
+
+.right-side {
+    flex: 2; /* Занимает 2 части доступного пространства */
+    padding-left: 20px; /* Отступ слева для текста */
+}
+
+.portrait {
+    max-width: 100%; /* Ограничение ширины изображения */
+    height: auto; /* Автоматическая высота */
+    border-radius: 10px; /* Скругление углов изображения */
+}
+
+blockquote {
+    margin: 20px 0;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+    border-left: 5px solid #007bff; /* Цвет границы слева */
+    border-radius: 5px; /* Скругление углов блока */
+    color: white; /* Цвет текста цитаты - белый */
+}
+
+
 
 /* Spotlight */
 
