@@ -4124,6 +4124,8 @@ blockquote {
 		overflow: hidden;
 	  
 		border-radius: 28px;
+
+		
 	  }
 	  .ag-courses-item_link {
 		display: block;
@@ -4133,6 +4135,7 @@ blockquote {
 		overflow: hidden;
 	  
 		position: relative;
+		
 	  }
 	  .ag-courses-item_link:hover,
 	  .ag-courses-item_link:hover .ag-courses-item_date {
