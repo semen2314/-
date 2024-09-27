@@ -4101,7 +4101,7 @@ blockquote {
 	  
 	  
 	  body {
-		background-color: #000;
+		background-color: rgb(36,43,51);
 	  }
 	  .ag-courses_box {
 		display: -webkit-box;
@@ -4128,7 +4128,7 @@ blockquote {
 	  .ag-courses-item_link {
 		display: block;
 		padding: 30px 20px;
-		background-color: #121212;
+		background-color: rgb(36,43,51);
 	  
 		overflow: hidden;
 	  
