@@ -291,13 +291,13 @@ input, select, textarea {
 	
 /* Achiw */
 #achievements {
-    padding: 40px; /* Отступы вокруг секции */
-    background-color: #635c5c; /* Цвет фона для секции */
+    padding: 40px; 
+    background-color: #473d3d; 
 }
 
 #achievements .content {
-    display: flex; /* Используем flexbox для расположения элементов в строку */
-    align-items: flex-start; /* Выравнивание по верхней части */
+    display: flex; 
+    align-items: flex-start; 
     margin-top: 20px; /* Отступ сверху для контента */
 }
 
@@ -312,6 +312,9 @@ input, select, textarea {
 }
 
 .achievement-slider {
+    display: flex; /* Включаем flexbox */
+    justify-content: center; /* Центрируем содержимое по горизонтали */
+    align-items: center; /* Центрируем содержимое по вертикали */
     position: relative; /* Устанавливаем позицию для контейнера изображений */
     width: 100%; /* Задаем ширину контейнера */
     height: 300px; /* Устанавливаем фиксированную высоту для контейнера */
@@ -319,16 +322,24 @@ input, select, textarea {
 }
 
 .achievement-image {
-    display: none; /* Скрываем все изображения по умолчанию */
+    position: absolute; /* Позволяет накладывать изображения одно на другое */
     width: 100%; /* Задаем ширину изображения 100% от контейнера */
     height: 100%; /* Задаем высоту изображения 100% от контейнера */
     object-fit: cover; /* Обеспечивает обрезку изображения, чтобы оно вписывалось в контейнер */
     border-radius: 10px; /* Скругление углов изображения */
+    opacity: 0; /* Изначально все изображения прозрачные */
+    transition: opacity 1s ease-in-out; /* Плавный переход для прозрачности */
 }
 
 .achievement-image.active {
-    display: block; /* Показываем только активное изображение */
+    opacity: 1; /* Полная непрозрачность для активного изображения */
 }
+
+
+
+
+
+
 
 
 
