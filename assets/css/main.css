@@ -295,18 +295,17 @@ input, select, textarea {
     background-color: #669; 
 }
 
-#achievements-blue .content {
-    display: flex; 
-    align-items: flex-start; 
-    margin-top: 20px; /* Отступ сверху для контента */
-}
-
-#achievements-grey{
+#activity-grey {
     padding: 40px; 
     background-color: #473d3d; 
 }
 
-#achievements-grey .content {
+#history-grey {
+    padding: 40px; 
+    background-color: #473d3d; 
+}
+
+.content {
     display: flex; 
     align-items: flex-start; 
     margin-top: 20px; /* Отступ сверху для контента */
@@ -331,7 +330,6 @@ input, select, textarea {
     height: 300px; /* Устанавливаем фиксированную высоту для контейнера */
     overflow: hidden; /* Скрываем переполнение */
 }
-
 .achievement-image {
     position: absolute; /* Позволяет накладывать изображения одно на другое */
     width: 100%; /* Задаем ширину изображения 100% от контейнера */
@@ -345,7 +343,6 @@ input, select, textarea {
 .achievement-image.active {
     opacity: 1; /* Полная непрозрачность для активного изображения */
 }
-
 /* Row */
 
 	.row {
