@@ -311,6 +311,30 @@ input, select, textarea {
     margin-top: 20px; /* Отступ сверху для контента */
 }
 
+.news-content {
+    display: flex; 
+    flex-direction: column; /* Элементы располагаются вертикально */
+    align-items: flex-start; 
+    margin-top: 20px; /* Отступ сверху для контента */
+	max-height: 300px; /* Максимальная высота секции (настройте по необходимости) */
+    overflow: hidden; /* Скрывает переполнение */
+}
+
+.news-content h2 {
+    margin-bottom: 0.5em; /* Отступ снизу для заголовков */
+	margin-top: 1px;
+}
+
+.news-content p {
+    margin-top: 0; /* Убедитесь, что у абзацев нет ненужного отступа сверху */
+    margin-bottom: 13em; /* Достаточный отступ снизу */
+	padding-right: 1em;
+    color: #fff; /* Убедитесь, что текст абзаца виден */
+
+	
+}
+
+
 .left-side {
     flex: 1; /* Занимает 1 часть доступного пространства */
     text-align: center; /* Выравнивание изображения по центру */
@@ -4167,6 +4191,7 @@ blockquote {
 		background-size: cover;
 		padding-top: 0;
 		background-color: rgba(0, 0, 0, 0.5);
+		
 	}
 
 	body.landing #footer {
@@ -4196,13 +4221,13 @@ blockquote {
 	}
 
 	.ag-format-container {
-		width: 1142px;
+		width: 1000px;
 		margin: 0 auto;
 	  }
 	  
 	  
 	  body {
-		background-color: rgb(36,43,51);
+		background-color: rgb(255, 255, 255);
 	  }
 	  .ag-courses_box {
 		display: -webkit-box;
@@ -4213,8 +4238,8 @@ blockquote {
 		align-items: flex-start;
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
-	  
-		padding: 50px 0;
+		
+		
 	  }
 	  .ag-courses_item {
 		-ms-flex-preferred-size: calc(33.33333% - 30px);
