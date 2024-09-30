@@ -249,8 +249,9 @@ input, select, textarea {
 	blockquote {
 		border-left: solid 4px #fff;
 		font-style: italic;
-		margin: 0 0 2em 0;
+		margin: 0 0 0 0;
 		padding: 0.5em 0 0.5em 2em;
+		align-items: center;
 	}
 
 	code {
@@ -290,19 +291,19 @@ input, select, textarea {
 	}
 	
 /* Achiw */
-#achievements-blue {
+#achievements {
     padding: 40px; 
     background-color: #669; 
 }
 
-#activity-grey {
+#activity {
     padding: 40px; 
     background-color: #473d3d; 
 }
 
-#history-grey {
+#history {
     padding: 40px; 
-    background-color: #473d3d; 
+    background-color: #669; 
 }
 
 .content {
@@ -2989,7 +2990,7 @@ blockquote {
 	}
 
 		.wrapper > .inner {
-			width: 60em;
+			
 			margin: 0 auto;
 		}
 
@@ -3975,6 +3976,7 @@ blockquote {
 		display: -ms-flex;
 		display: flex;
 		max-width: 45em;
+		align-items: center;
 	}
 
 		#cta .inner header {
@@ -3982,12 +3984,13 @@ blockquote {
 			-webkit-order: 1;
 			-ms-order: 1;
 			order: 1;
-			padding-right: 3em;
+			align-items: center;
 			width: 70%;
 		}
 
 			#cta .inner header p {
 				color: inherit;
+				
 			}
 
 		#cta .inner .actions {
