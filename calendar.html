@@ -111,15 +111,20 @@
 .tooltip {
     position: absolute;
     width: 175px;
-    height: 300px;
-    background-color: red;
+    height: auto; /* Изменяем высоту на auto для адаптивности */
+    background-color: #ff6f61; /* Цвет фона */
     display: none;
     pointer-events: none;
     z-index: 1000;
     border-radius: 10px;
     opacity: 0; /* Начальная прозрачность */
     transition: opacity 0.3s ease-in; /* Переход только для появления */
+    padding: 10px; /* Добавляем отступы внутри прямоугольника */
+    color: white; /* Цвет текста */
+    text-align: center; /* Центрируем текст */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень для лучшего визуального эффекта */
 }
+
 
 
 /* Медиазапросы для мобильных устройств */
@@ -191,35 +196,41 @@
     
 
 <script>
-    const events = {
-        '2023-10': ['Событие 1', 'Событие 2'],
-        '2023-11': ['Событие 3', 'Событие 4'],
-        // Добавьте события для других месяцев
-    };
+   const events = {
+    '2023-10': [
+        { title: 'Событие 1', description: 'Описание события 1' },
+        { title: 'Событие 2', description: 'Описание события 2' }
+    ],
+    '2023-11': [
+        { title: 'Событие 3', description: 'Описание события 3' },
+        { title: 'Событие 4', description: 'Описание события 4' }
+    ],
+};
 
-    // Пример заранее определенных мероприятий
 const predefinedEvents = [
-    { month: "10", day: 10, name: "Кулинарное шоу" },
-    { month: "10", day: 15, name: "Встреча с друзьями" },
-    { month: "11", day: 5, name: "Концерт" },
-    { month: "11", day: 20, name: "День рождения" },
-    { month: "10", day: 10, name: "Проверка" }
+    { month: "10", day: 10, title: "Научная конференция", description: "Приходите на научную конференцию! Здесь будет много умных (в отличие от вас) людей. Бла бла бла" },
+    { month: "10", day: 15, title: "Встреча с друзьями", description: "Время провести с друзьями." },
+    { month: "11", day: 5, title: "Концерт", description: "Не пропустите концерт!" },
+    { month: "11", day: 20, title: "День рождения", description: "Празднование дня рождения." },
+    { month: "10", day: 10, title: "Проверка", description: "Не забудьте про проверку!" }
 ];
+
     let currentDate = new Date(2023, 9); // Октябрь 2023
 
-    function addEvent(month, day, eventName) {
+    
+    function addEvent(month, day, title, description) {
     if (!events[month]) {
         events[month] = {};
     }
     if (!events[month][day]) {
         events[month][day] = [];
     }
-    events[month][day].push(eventName);
+    events[month][day].push({ title, description });
 }
 
 // Добавляем заранее определенные события
 predefinedEvents.forEach(event => {
-    addEvent(event.month, event.day, event.name);
+    addEvent(event.month, event.day, event.title, event.description);
 });
 
 
@@ -230,6 +241,7 @@ function renderCalendar() {
     const currentMonth = currentDate.getFullYear() + '-' + String(currentDate.getMonth() + 1).padStart(2, '0');
     document.getElementById('current-month').innerText = currentDate.toLocaleString('default', { month: 'long', year: 'numeric' });
 
+    // Удаляем все строки, кроме первой (заголовка)
     while (calendar.rows.length > 1) {
         calendar.deleteRow(1);
     }
@@ -245,14 +257,14 @@ function renderCalendar() {
         for (let j = 0; j < 7; j++) {
             const cell = row.insertCell();
             if (i === 0 && j < startDay || day > dayCount) {
-                cell.classList.add('empty-cell');
+                cell.classList.add('empty-cell'); // Для пустых ячеек
             } else {
                 cell.innerHTML = `<div style="text-align: left; font-weight: bold;">${day}</div>`;
                 const dayEvents = events[currentDate.getMonth() + 1]?.[day] || [];
                 dayEvents.forEach(event => {
                     const eventDiv = document.createElement('div');
                     eventDiv.className = 'event';
-                    eventDiv.textContent = event;
+                    eventDiv.textContent = event.title; // Заголовок события
                     cell.appendChild(eventDiv);
 
                     eventDiv.addEventListener('mouseover', function(e) {
@@ -263,6 +275,7 @@ function renderCalendar() {
                         tooltip.style.display = 'block';
                         tooltip.style.left = (rect.right + 10) + 'px';
                         tooltip.style.top = rect.top + 'px';
+                        tooltip.innerHTML = `<strong>${event.title}</strong><br>${event.description}`; // Заголовок и описание
                         setTimeout(() => tooltip.style.opacity = 1, 0); // Плавное появление
                     });
 
@@ -277,6 +290,7 @@ function renderCalendar() {
         }
     }
 }
+
 
 
 
