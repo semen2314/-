@@ -5,42 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>События и мероприятия</title>
     <style>
+       
+        @font-face{
+            font-family: 'cal';
+            src: url(assets/fonts/calendar.ttf)
+            format('ttf');
+            font-weight: normal;
+            font-style: normal;
+        }
         body {
-            font-family: Arial, sans-serif;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Устанавливаем шрифт для всей страницы */
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5; /* Светлый фон для страницы */
+            background-color: #f0f0f0; /* Светлый фон для страницы */
         }
         .header {
-            background-color: #003366; /* Темно-синий фон */
+            background-color: #2c3e50; /* Темно-синий фон */
             color: white;
             text-align: center;
             padding: 20px;
             font-size: 2em;
-        }
-        .month-navigation {
-            text-align: center;
-            margin: 20px;
-            font-size: 1.5em; /* Увеличенный размер шрифта для месяца */
-            position: relative; /* Для фиксированного размера */
-            height: 60px; /* Фиксированная высота для структуры */
-        }
-        .month-navigation button {
-            padding: 10px;
-            font-size: 1em;
-        }
-        .has-event {
-    background-color: #ffeb3b9a; /* Жёлтый фон для ячеек с событиями */
+            margin-bottom: 10px;
+       }
+       .month-navigation {
+    display: flex; /* Используем Flexbox для выравнивания в строку */
+    justify-content: center; /* Центрируем элементы по горизонтали */
+    align-items: center; /* Выравниваем элементы по вертикали */
+    width: 100%; /* Используем 100% ширину для центрирования */
+    max-width: 400px; /* Максимальная ширина для всего блока */
+    margin: 10px auto; /* Центрирование блока на странице и добавление отступов сверху и снизу */
+    gap: 20px; /* Добавляем отступы между кнопками и текстом */
 }
 
-        .calendar {
-            display: table;
-            margin: 20px auto;
-            border-collapse: collapse;
-            width: 90%; /* Увеличенный размер календаря */
-            max-width: 800px; /* Максимальная ширина */
-            border: 2px solid #cccccc; /* Границы календаря */
-        }
+#current-month {
+    display: inline-block; /* Делаем элемент блочным */
+    text-align: center; /* Центрируем текст */
+    min-width: 160px; /* Увеличиваем минимальную ширину */
+    max-width: 160px; /* Увеличиваем максимальную ширину */
+    font-size: 1.2em; /* Увеличиваем размер шрифта */
+    white-space: nowrap; /* Запрещаем перенос строк */
+    overflow: hidden; /* Скрываем переполнение */
+    text-overflow: ellipsis; /* Добавляем многоточие для длинного текста */
+}
+
+
+
+.month-navigation button {
+    flex-shrink: 0; /* Не позволяем кнопкам сжиматься */
+    padding: 10px 20px; /* Увеличиваем отступы внутри кнопок */
+    font-size: 1.1em; /* Увеличиваем размер шрифта */
+    cursor: pointer; /* Добавляем указатель в виде руки при наведении */
+    border: 1px solid #cccccc; /* Добавляем границу */
+    background-color: #f8f9fa; /* Светлый фон кнопки */
+    border-radius: 4px; /* Скругляем углы */
+    transition: background-color 0.3s; /* Плавный переход цвета при наведении */
+    margin-top: 10px;
+}
+
+.month-navigation button:hover {
+    background-color: #e2e6ea; /* Цвет фона при наведении */
+}
+
+        .has-event {
+    background-color: #ffd54f; /* Жёлтый фон для ячеек с событиями */
+}
+
+.calendar {
+    display: table;
+    margin: 20px auto; /* Используем такой же отступ сверху */
+    border-collapse: collapse;
+    width: 90%; /* Увеличенный размер календаря */
+    max-width: 800px; /* Максимальная ширина */
+    border: 2px solid #cccccc; /* Границы календаря */
+}
         .calendar th, .calendar td {
     border: 1px solid #cccccc; /* Фиксированная граница для ячеек */
     width: 70px;  /* Фиксированная ширина ячеек */
@@ -63,14 +100,14 @@
        height: 20px; /* Установите фиксированную высоту */
        width: 70px;
        padding: 2px;
-       background-color: #e0f7fa; /* Светло-голубой фон для событий */
+       background-color: #a5d6a7; /* Светло-голубой фон для событий */
     border-radius: 3px; /* Скругление углов */
     
    }
 
 
         .calendar th {
-            background-color: #ffcc00; /* Ярко-желтый фон для заголовков */
+            background-color: #f39c12; /* Ярко-желтый фон для заголовков */
             font-weight: bold;
             color: #000;
         }
@@ -181,4 +218,5 @@ predefinedEvents.forEach(event => {
 </script>
 
 </body>
+
 </html>
