@@ -70,6 +70,16 @@ input::-moz-focus-inner {
 	padding: 0;
 }
 
+.description {
+    max-height: 205px; /* Установите максимальную высоту блока */
+    overflow: hidden; /* Скрывает переполненный текст */
+    transition: max-height 0.3s ease; /* Плавный переход при изменении высоты */
+}
+
+.description.expanded {
+    max-height: 1000px; /* Увеличьте высоту при раскрытии */
+}
+
 input, select, textarea {
 	-moz-appearance: none;
 	-webkit-appearance: none;
