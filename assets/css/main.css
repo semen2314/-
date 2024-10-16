@@ -3025,7 +3025,7 @@ blockquote {
 		}
 
 		.wrapper.style1 {
-			background-color: #3b3e3e;
+			background-image: url("images/news.jpg");
 			color: #c8ece9;
 			padding-top: 2%;
 			padding-bottom: 1%;
@@ -4347,7 +4347,36 @@ blockquote {
 	  }
 	  
 	  
-	  
+	  .quote-section {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 40vh; /* Занимает всю высоту экрана */
+		background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный черный фон */
+	}
+	
+	.quote-section .quote-container {
+		background-color: #243D56; /* Полупрозрачный белый фон */
+		border: 2px solid rgba(255, 255, 255, 0.5); /* Контур */
+		border-radius: 10px; /* Закругленные углы */
+		padding: 20px;
+		max-width: 600px; /* Максимальная ширина для больших экранов */
+		width: 50%; /* Ширина для мобильных устройств */
+		text-align: center; /* Центрирование текста */
+	}
+	
+	.quote-section .quote-text {
+		font-size: 1.5em; /* Размер шрифта для цитаты */
+		color: #ffffff; /* Цвет текста */
+		margin: 0; /* Убираем отступы */
+		padding: 10px;
+	}
+	
+	.quote-section .quote-author {
+		font-size: 1.2em; /* Размер шрифта для автора */
+		color: rgba(255, 255, 255, 0.8); /* Цвет текста для автора */
+		margin-top: 10px; /* Отступ сверху */
+	}
 	  @media only screen and (max-width: 979px) {
 		.ag-courses_item {
 		  -ms-flex-preferred-size: calc(50% - 30px);
